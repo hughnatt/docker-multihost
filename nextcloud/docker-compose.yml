@@ -1,0 +1,16 @@
+# docker-compose.yml
+version: '3'
+services:
+  nextcloud:
+    image: nextcloud
+    restart: always
+    environment:
+      - VIRTUAL_HOST=<sub.yourdomain.here>
+      - LETSENCRYPT_HOST=<sub.yourdomain.here>
+      - LETSENCRYPT_EMAIL=<email@yourdomain.here>
+    volumes:                     
+      - ./data:/var/www/html
+networks:
+  default:
+    external:
+      name: nginx-proxy
