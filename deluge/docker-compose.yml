@@ -1,0 +1,25 @@
+# docker-compose.yml
+version: '3'
+services:
+  deluge:
+    image: linuxserver/deluge
+    restart: always
+    ports:
+      - 58846:58846
+      - 58946:58946
+      - 58946:58946/udp
+    environment:
+      - PUID=1001
+      - PGID=1001
+      - TZ=<Continent/City e.g Europe/Paris>
+      - VIRTUAL_PORT=8112
+      - VIRTUAL_HOST=<sub.yourdomain.here>
+      - LETSENCRYPT_HOST=<sub.yourdomain.here>
+      - LETSENCRYPT_EMAIL=<email@yourdomain.here>
+    volumes:
+      - ./config:/config
+      - ./downloads:/downloads 
+networks:
+  default:
+    external:
+      name: nginx-proxy
