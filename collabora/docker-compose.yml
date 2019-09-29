@@ -11,7 +11,7 @@ services:
       - VIRTUAL_NETWORK=nginx-proxy
       - LETSENCRYPT_HOST=<sub.yourdomain.here>
       - LETSENCRYPT_EMAIL=<email@yourdomain.here>
-      - domain=sub\\.yourdomain\\.here
+      - domain=<sub\\.yourdomain\\.here>
     cap_add:
       - MKNOD  
     expose:

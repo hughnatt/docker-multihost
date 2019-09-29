@@ -5,9 +5,9 @@ services:
     image: onlyoffice/documentserver
     restart: always
     environment:
-      - VIRTUAL_HOST=sub.yourdomain.here
-      - LETSENCRYPT_HOST=sub.yourdomain.here
-      - LETSENCRYPT_EMAIL=email@yourdomain.here
+      - VIRTUAL_HOST=<sub.yourdomain.here>
+      - LETSENCRYPT_HOST=<sub.yourdomain.here>
+      - LETSENCRYPT_EMAIL=<email@yourdomain.here>
 networks:
   default:
     external:
