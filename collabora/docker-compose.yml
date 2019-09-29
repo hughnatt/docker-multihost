@@ -1,0 +1,22 @@
+# docker-compose.yml
+version: '3'
+services:
+  collabora:
+    image: collabora/code
+    restart: always
+    environment:
+      - VIRTUAL_HOST=<sub.yourdomain.here>
+      - VIRTUAL_PORT=9980
+      - VIRTUAL_PROTO=https
+      - VIRTUAL_NETWORK=nginx-proxy
+      - LETSENCRYPT_HOST=<sub.yourdomain.here>
+      - LETSENCRYPT_EMAIL=<email@yourdomain.here>
+      - domain=sub\\.yourdomain\\.here
+    cap_add:
+      - MKNOD  
+    expose:
+      - 9980
+networks:
+  default:
+    external:
+      name: nginx-proxy
