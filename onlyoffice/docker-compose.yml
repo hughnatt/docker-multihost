@@ -1,0 +1,14 @@
+# docker-compose.yml
+version: '3'
+services:
+  onlyoffice:
+    image: onlyoffice/documentserver
+    restart: always
+    environment:
+      - VIRTUAL_HOST=sub.yourdomain.here
+      - LETSENCRYPT_HOST=sub.yourdomain.here
+      - LETSENCRYPT_EMAIL=email@yourdomain.here
+networks:
+  default:
+    external:
+      name: nginx-proxy
