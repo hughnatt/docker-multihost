@@ -1,7 +1,10 @@
 *This README is Work-In-Progress*
-
-
+    
 # docker-multihost
+
+
+![Docker Logo](https://www.docker.com/sites/default/files/vertical.png)
+
 A repository for showcasing how to host multiple web services on a single physical server using docker containers.
 
 It consists mainly of a collection of docker-compose files that works together to provide the different services.
